@@ -1,3 +1,33 @@
+# Monitorando Docker com [cAdvisor](https://github.com/google/cadvisor), [Prometheus](https://github.com/prometheus/prometheus) e [Grafana](https://github.com/grafana/grafana)
+
+Todos serviços necessários configurados no Docker Compose, permitindo o inicio das métricas com um único comando.
+
+## Executando
+
+```sh
+# execute em segundo plano no terminal
+$ docker-compose up -d
+# ou execute em primeiro plano no terminal
+$ docker-compose up
+```
+
+## Credenciais
+
+**Grafana**
+
+|  user | password |
+|:-----:|:--------:|
+| admin |   admin  |
+
+## Métricas
+
+- [cadvisor - prometheus.md](https://github.com/google/cadvisor/blob/master/docs/storage/prometheus.md)
+
+## Referências
+
+<details>
+  <summary>Referências</summary>
+
 https://prometheus.io/docs/guides/cadvisor/
 
 https://stackoverflow.com/questions/40327062/how-to-calculate-containers-cpu-usage-in-kubernetes-with-prometheus-as-monitori
@@ -30,3 +60,4 @@ container_memory_usage_bytes{id=~"/docker/.*"}
 
 
 sum(rate(container_cpu_usage_seconds_total{id=~"/docker/.*"}[1m])) by (name)
+</details>
