@@ -8,6 +8,7 @@ services:
       - --config.file=/etc/prometheus/prometheus.yml
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus:/prometheus
     networks:
       - back-end
     depends_on:
@@ -45,3 +46,4 @@ networks:
 
 volumes:
   grafana:
+  prometheus:
