@@ -23,6 +23,12 @@ $ docker-compose up
 
 - [cadvisor - prometheus.md](https://github.com/google/cadvisor/blob/master/docs/storage/prometheus.md)
 
+## Scrape Interval
+
+Configure o `Scrape Interval` do Prometheus no arquivo [prometheus.yml](./prometheus.yml), lembre-se também de atualizar nas configurações `Data Sources / Prometheus` do Grafana este novo `Scrape Interval`.
+
+_OBS: Quanto menor o `Scrape Interval` maior o consumo de processamento._
+
 ## Referências
 
 <details>
@@ -60,4 +66,15 @@ container_memory_usage_bytes{id=~"/docker/.*"}
 
 
 sum(rate(container_cpu_usage_seconds_total{id=~"/docker/.*"}[1m])) by (name)
+
+
+https://grafana.com/docs/grafana/latest/datasources/prometheus/
+
+https://github.com/vegasbrianc/prometheus
+
+https://grafana.com/grafana/dashboards/193
+
+https://www.metricfire.com/blog/top-10-cadvisor-metrics-for-prometheus/
+
+https://github.com/stefanprodan/dockprom
 </details>
